@@ -1,6 +1,6 @@
 # Algo-buy
 
-##Getting Started
+## Getting Started
 To get the Node server running locally:
 
 -Clone this repo
