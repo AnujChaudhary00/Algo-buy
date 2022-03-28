@@ -15,7 +15,7 @@ To get the Node server running locally:
 - [expressjs](https://github.com/expressjs/express) - The server for handling and routing HTTP requests
 - [express-jwt](https://github.com/auth0/express-jwt) - Middleware for validating JWTs for authentication
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) - For generating JWTs used by authentication
-- [bcryptjs] (https://github.com/auth0/node-bcrypt) - For hasing the passwords
+- [bcryptjs](https://github.com/expressjs/node-bcrypt) - For hasing the passwords
 - [mongoose](https://github.com/Automattic/mongoose) - For modeling and mapping MongoDB data to javascript 
 - [jest] - For unit testing
 - [morgan] - For loggin the requests
