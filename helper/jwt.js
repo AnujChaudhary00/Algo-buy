@@ -1,3 +1,4 @@
+
 const expressJwt = require('express-jwt');
 require('dotenv/config');
 function authJwt() {
@@ -9,12 +10,15 @@ function authJwt() {
        
     }).unless({
         path: [
-            { url: /\/algo-buy\/products(.*)/, methods: ['GET', 'OPTIONS'] },
-            { url: /\/algo-buy\/categories(.*)/, methods: ['GET', 'OPTIONS'] },
-            `${api}/users/login`,
-            `${api}/users/signup`
+            { url: /\/Algo-buy\/products/, methods: ['GET'] },
+            { url: /\/Algo-buy\/categories/, methods: ['GET'] },
+            { url: /\/Algo-buy\/users\/login/ ,methods:['POST']},
+            { url: /\/Algo-buy\/users\/signup/, methods:['POST']}
         ] 
     })
 }
 
 module.exports = authJwt
+
+
+
