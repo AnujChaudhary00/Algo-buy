@@ -1,8 +1,8 @@
-
 const express=require('express');
-const {category} = require('../models/categories');
-const router=express.Router();
 
+const {category} = require('../models/categories');
+
+const router=express.Router();
 
 router.get('/',async (req,res)=>{
     const categoryList=await category.find();
@@ -14,6 +14,7 @@ router.get('/',async (req,res)=>{
     res.status(200).send(categoryList);
 })
 
+
 router.post(`/`,async (req,res)=>{
     let categoryObject=new category({
         name:req.body.name,
@@ -24,10 +25,24 @@ router.post(`/`,async (req,res)=>{
     categoryGet=await categoryObject.save();
 
     if(!categoryGet)
-        return res.status(404).send("the category cannot be created!");
+        return res.status(500).send("the category cannot be created!");
      
-    res.send(categoryGet);
+    res.status(200).send(categoryGet);
 })
 
 module.exports=router;
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
 
