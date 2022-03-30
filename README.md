@@ -17,10 +17,11 @@ To get the Node server running locally:
 - [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken) - For generating JWTs used by authentication
 - [bcryptjs](https://github.com/expressjs/node-bcrypt) - For hasing the passwords
 - [mongoose](https://github.com/Automattic/mongoose) - For modeling and mapping MongoDB data to javascript 
-- [jest] - For unit testing
 - [morgan] - For loggin the requests
 - [nodemon] - For monitoring the application and auto starting, after saving change. 
 - [dotenv] - For loading enviromental variables.
+- [mocha] - For unit testing the API's
+- [swagger] - For API documentation and generating interactive API Test UI.
 
 ## Application Structure
 
@@ -28,6 +29,8 @@ To get the Node server running locally:
 - `helper/` - This folder contains files for error handling and checiking api authorization.
 - `routes/` - This folder contains the route definitions for our API.
 - `models/` - This folder contains the schema definitions for our Mongoose models.
+- `swagger/` - This folder contains YAML file for documenting API's.
+- `database/` - This folder contains file to connect to cloud mongo database.
 
 ## Error Handling
 
@@ -37,5 +40,9 @@ In `helper/error-handeling.js`, we define a error-handling middleware for handli
 
 Requests are authenticated using the `Authorization` header with a valid JWT. We define two express api's in `helper/jwt.js` that can be used to authenticate requests. The `jwt` middlwre using our application's secret and will return a 401 status code if the request cannot be authenticated. The payload of the JWT can then be accessed from `req.payload` in the endpoint.
 
-
+## Documentation
+Documentation of various API' used is done using `swagger` and `swaggerui-express`, to see the docs just run the app and go to `localhost:3000/Algo-buy/api-docs`.
 <br />
+
+## Testing
+For testing just run `npm test` in terminal.
